@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
+import Person from './Person'
 
 const baseUrl = 'https://randomuser.me/api?results=25';
 
@@ -16,22 +17,49 @@ export default function App() {
 
   return (
     <div>
-      {users.map(user => {
-        const { title, first, last } = user.name;
-        const {thumbnail} =user.picture
-
-        return (
-          <ul key={user.id}>
-            <li>
-              <h4>{`${title}. ${first} ${last}`}</h4>
-              <img src={thumbnail} />
-            </li>
-          </ul>
-        );
+     <ul>
+      {users.map((user, index)=>{
+         const { title, first, last } = user.name;
+         const {thumbnail} =user.picture
+        return <Person data={user} />
       })}
+
+     </ul>
     </div>
   );
 }
+
+// export default function App() {
+//   const [users, setUsers] = useState(null);
+
+//   useEffect(() => {
+//     axios.get(baseUrl).then(response => {
+//       setUsers(response.data.results);
+//     });
+//   }, []);
+
+//   if (!users) return null;
+
+//   return (
+//     <div>
+//       {users.map(user => {
+//         const { title, first, last } = user.name;
+//         const {thumbnail} =user.picture
+
+//         return (
+//           <ul key={user.id}>
+//             <li>
+//             <img src={thumbnail} alt={user.name}/>
+//             <h4>{`${title}. ${first} ${last}`}</h4>
+//             <button onClick={handleClick}>View Details</button>
+             
+//             </li>
+//           </ul>
+//         );
+//       })}
+//     </div>
+//   );
+// }
 
 
 // import axios from 'axios'
