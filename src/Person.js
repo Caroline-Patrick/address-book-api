@@ -23,11 +23,11 @@ export default function Person(props) {
 
     const buttonText = isClicked ? 'See Less' : 'See more';
     
-    return( <li>
+    return( <li className="person-info">
         
          <img src={thumbnail} alt='thumbnail picture'/>   
             <h3>{`${title}. ${first} ${last}`}</h3>
-            {isClicked && <ul>
+            {isClicked && <ul className="person-data">
                 <li>{`Age: ${age}`}</li>
                 <li>{`Phone: ${phone}`}</li>
                 <li>{`Email: ${email}`}</li>

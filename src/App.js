@@ -17,10 +17,9 @@ export default function App() {
 
   return (
     <div>
-     <ul>
+     <ul className="list">
       {users.map((user, index)=>{
-         const { title, first, last } = user.name;
-         const {thumbnail} =user.picture
+         
         return <Person data={user} />
       })}
 
