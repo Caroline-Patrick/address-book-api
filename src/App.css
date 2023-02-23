@@ -1,9 +1,12 @@
 body {
   padding: 20px;
  font-family: 'Courier New', Courier, monospace;
+ background-color: black;
+ color:blanchedalmond;
 }
 h3 {
   font-size: 1em;
+  
 }
 .list {
   display: grid;
